@@ -14,7 +14,7 @@ import (
 
 func main() {
     // Load args: path_to_data_folder, phase_number [,optional_array_with_allowed_uri_filters])
-	ch, err := hlcuptester.Load("../../../data/", 2, "accounts/new")
+	ch, err := hlcuptester.Load("path/to/highloadcup2018/data/", 2, "accounts/new")
 
 	if err != nil {
 		log.Fatal(err)
