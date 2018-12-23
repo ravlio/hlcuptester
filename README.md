@@ -5,8 +5,6 @@ Highloadcup 2018 datafile loader
 Usage
 -----
 
-Use `Load(path_to_data_folder, phase_number [,optional_array_with_allowed_uri_filters])`
-
 ```go
 import (
 	"fmt"
@@ -15,6 +13,7 @@ import (
 )
 
 func main() {
+    // Load args: path_to_data_folder, phase_number [,optional_array_with_allowed_uri_filters])
 	ch, err := hlcuptester.Load("../../../data/", 2, "accounts/new")
 
 	if err != nil {
