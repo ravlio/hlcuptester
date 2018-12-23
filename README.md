@@ -27,4 +27,9 @@ func main() {
 
 		fmt.Printf("URI: %s\nRequestBody: %s\nResponseCode: %d\nResponseBody:%s\n\n", a.URI, a.RequestBody, a.ResponseCode, a.ResponseBody)
 	}
-}```
+}
+```
+
+Other Projects
+--------------
+[atercattus/highloadcup_tester](https://github.com/atercattus/highloadcup_tester) - standalone validate and benchmark tool

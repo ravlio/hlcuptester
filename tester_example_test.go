@@ -18,6 +18,6 @@ func ExampleUsage() {
 			log.Fatal(err)
 		}
 
-		fmt.Printf("URI: %s\nRequestBody: %s\nResponseCode: %d\nResponseBody:%s\n\n", a.URI, a.RequestBody, a.ResponseStatus, a.ResponseBody)
+		fmt.Printf("URI: %s\nRequestBody: %s\nResponseStatus: %d\nResponseBody:%s\n\n", a.URI, a.RequestBody, a.ResponseStatus, a.ResponseBody)
 	}
 }
