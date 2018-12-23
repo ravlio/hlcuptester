@@ -10,11 +10,11 @@ import (
 )
 
 type ReqResp struct {
-	URI          string
-	RequestBody  string
-	ResponseCode int
-	ResponseBody string
-	Err          error
+	URI            string
+	RequestBody    string
+	ResponseStatus int
+	ResponseBody   string
+	Err            error
 }
 
 func skip(r *bufio.Scanner, n int) bool {
@@ -94,9 +94,9 @@ func Load(datapath string, phase int, uriFilter ... string) (ch chan *ReqResp, e
 			}
 
 			a := strings.Split(answScan.Text(), "\t")
-			rs.ResponseCode, err = strconv.Atoi(a[2])
+			rs.ResponseStatus, err = strconv.Atoi(a[2])
 			if err != nil {
-				ch <- &ReqResp{Err: errors.Wrap(err, "error parsing return code")}
+				ch <- &ReqResp{Err: errors.Wrap(err, "error parsing return status")}
 				return
 			}
 
