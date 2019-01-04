@@ -26,7 +26,7 @@ func skip(r *bufio.Scanner, n int) bool {
 	return true
 }
 
-func Load(datapath string, phase int, uriFilter ... string) (ch chan *ReqResp, err error) {
+func Load(datapath string, phase int, uriFilter ... Filter) (ch chan *ReqResp, err error) {
 	var ammo, answ *os.File
 	var method string
 
@@ -106,7 +106,7 @@ func Load(datapath string, phase int, uriFilter ... string) (ch chan *ReqResp, e
 
 			if len(uriFilter) > 0 {
 				for _, f := range uriFilter {
-					if strings.Contains(rs.URI, f) {
+					if f(rs.URI) {
 						ch <- rs
 						break
 					}

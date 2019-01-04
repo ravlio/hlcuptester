@@ -7,7 +7,7 @@ import (
 )
 
 func ExampleUsage() {
-	ch, err := hlcuptester.Load("../../../data/", 2, "accounts/new")
+	ch, err := hlcuptester.Load("../../../data/", 2, hlcuptester.InsidePath("accounts/new"))
 
 	if err != nil {
 		log.Fatal(err)
